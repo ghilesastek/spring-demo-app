@@ -26,7 +26,7 @@ pipeline {
         stage('Analyse SonarQube') {
             steps {
                 withSonarQubeEnv('SonarQubeLocal') {
-                    sh 'mvn sonar:sonar -Dspring.profiles.active=ci -Dsonar.token=$SONAR_TOKEN'
+                    sh 'mvn sonar:sonar -Dspring.profiles.active=ci -Dsonar.token=$SONAR_TOKEN -Dsonar.projectKey=spring-demo-app-ci -Dsonar.projectName="Spring Demo App CI"'
                 }
             }
         }
