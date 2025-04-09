@@ -25,7 +25,7 @@ pipeline {
 
         stage('Analyse SonarQube') {
             steps {
-                withSonarQubeEnv('SonarQube Local') {
+                withSonarQubeEnv('SonarQubeLocal') {
                     sh 'mvn sonar:sonar -Dspring.profiles.active=ci -Dsonar.token=$SONAR_TOKEN'
                 }
             }
